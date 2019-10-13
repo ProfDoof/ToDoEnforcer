@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">To-Do Enforcer</string>
+    <string name="hint_task_name">Task Name&#8230;</string>
+    <string name="hint_task_description">Task Description&#8230;</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Task not saved because it is has no Task Name.</string>
+    <string name="cancelled_task_creation">No task was created.</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="repeat_header">Repeat Schedule</string>
+    <string name="priority">Priority</string>
+    <string-array name="priority_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="permission_check_title">Do you want to give usage permissions ?</string>
+    <string name="permission_check_message">Without this permission, the app won\'t work</string>
+    <string name="battery_dialog_title">Disable Battery Optimization?</string>
+    <string name="battery_dialog_message">I STRONGLY RECOMMEND DISABLING THIS.\nAndroid System will kill the app after a short while if this is Enabled!</string>
+
+</resources>

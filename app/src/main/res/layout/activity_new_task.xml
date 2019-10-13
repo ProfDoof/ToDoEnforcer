@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <EditText
+        android:id="@+id/task_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_task_name"
+        android:inputType="textAutoComplete"
+        android:padding="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/big_padding"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textSize="18sp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:backgroundTint="@color/textColor"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/task_description_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/big_padding"
+        android:backgroundTint="@color/textColor"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_task_description"
+        android:inputType="textAutoComplete"
+        android:padding="@dimen/small_padding"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="18sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/priority"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/big_padding" />
+
+    <TextView
+        android:id="@+id/repeat_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/repeat_header"
+        android:textSize="18sp"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_monday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/monday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_tuesday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tuesday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_wednesday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wednesday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_thursday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/thursday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_friday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/friday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor" />
+
+    <CheckBox
+        android:id="@+id/checkbox_saturday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/saturday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor"/>
+
+    <CheckBox
+        android:id="@+id/checkbox_sunday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sunday"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:textColor="@color/textColor"
+        android:buttonTint="@color/textColor"/>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@layout/button_border_setting"
+        android:text="@string/button_save"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding" />
+
+</LinearLayout>
