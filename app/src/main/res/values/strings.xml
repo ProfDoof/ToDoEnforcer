@@ -31,5 +31,6 @@
     <string name="permission_check_message">Without this permission, the app won\'t work</string>
     <string name="battery_dialog_title">Disable Battery Optimization?</string>
     <string name="battery_dialog_message">I STRONGLY RECOMMEND DISABLING THIS.\nAndroid System will kill the app after a short while if this is Enabled!</string>
-
+    <string name="day_code_shared_pref_key">com.devilsadvocate.to_doenforcer.DAY_CODE_</string>
+    <string name="shared_pref_key">com.devilsadvocate.to_doenforcer.SHARED_PREF_KEY</string>
 </resources>

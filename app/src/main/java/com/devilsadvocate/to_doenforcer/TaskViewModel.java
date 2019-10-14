@@ -29,4 +29,8 @@ public class TaskViewModel extends AndroidViewModel
     public void insert(Task... tasks) { mRepository.insert(tasks);}
 
     public void completeTask(Task task) { mRepository.completeTask(task); }
+
+    public List<Task> getRepeatTasksByDay(String day) { return mRepository.getRepeatTasksByDay(day); }
+
+    public void uncompleteTasks(Task... tasks) { mRepository.uncompleteTasks(tasks); }
 }

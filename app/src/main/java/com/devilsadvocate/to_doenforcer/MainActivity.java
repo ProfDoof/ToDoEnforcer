@@ -13,6 +13,7 @@ import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -94,6 +95,61 @@ public class MainActivity extends AppCompatActivity {
         });
 
         permission_check();
+        add_scheduled_task();
+    }
+
+    private void add_scheduled_task()
+    {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.shared_pref_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
+
+        Calendar cal = Calendar.getInstance();
+        String currentDayCode = getDayCodeForDayOfWeek(cal.get(Calendar.DAY_OF_WEEK));
+
+        cal.add(Calendar.DATE, -1);
+        String yesterDayCode = getDayCodeForDayOfWeek(cal.get(Calendar.DAY_OF_WEEK));
+
+        boolean repeatedCurrentDay = sharedPreferences.getBoolean(getString(R.string.day_code_shared_pref_key)+currentDayCode, false);
+        boolean repeatedYesterDay = sharedPreferences.getBoolean(getString(R.string.day_code_shared_pref_key)+yesterDayCode, true);
+
+        if (repeatedYesterDay)
+            sharedPrefEditor.putBoolean(getString(R.string.day_code_shared_pref_key)+yesterDayCode, false);
+
+        if (repeatedCurrentDay)
+        {
+            sharedPrefEditor.apply();
+            return;
+        }
+
+        List<Task> repeatTasksForDay = mTaskViewModel.getRepeatTasksByDay(getDayCodeForDayOfWeek(Calendar.getInstance().get(Calendar.DAY_OF_WEEK)));
+        Task[] repeatTasksForDayArray = repeatTasksForDay.toArray(new Task[repeatTasksForDay.size()]);
+        mTaskViewModel.uncompleteTasks(repeatTasksForDay.toArray(repeatTasksForDayArray));
+
+        sharedPrefEditor.putBoolean(getString(R.string.day_code_shared_pref_key)+currentDayCode, true);
+        sharedPrefEditor.apply();
+    }
+
+    private String getDayCodeForDayOfWeek(int dayOfWeek)
+    {
+        switch (dayOfWeek)
+        {
+            case Calendar.MONDAY:
+                return "M";
+            case Calendar.TUESDAY:
+                return "T";
+            case Calendar.WEDNESDAY:
+                return "W";
+            case Calendar.THURSDAY:
+                return "R";
+            case Calendar.FRIDAY:
+                return "F";
+            case Calendar.SATURDAY:
+                return "S";
+            case Calendar.SUNDAY:
+                return "U";
+            default:
+                return "Error";
+        }
     }
 
     private boolean betweenTwoTimes(int startTime, int endTime)

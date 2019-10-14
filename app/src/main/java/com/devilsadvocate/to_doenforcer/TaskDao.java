@@ -22,8 +22,8 @@ public interface TaskDao {
     @Query("SELECT * FROM task WHERE uid IN (:taskIds) ORDER BY priority DESC")
     LiveData<List<Task>> getAllTasksByIds(int[] taskIds);
 
-    @Query("SELECT * FROM task WHERE repeat_schedule like :day")
-    LiveData<List<Task>> getAllTasksByRepeatDay(String day);
+    @Query("SELECT * FROM task WHERE repeat_schedule LIKE :day AND completed = 1")
+    List<Task> getAllTasksByRepeatDay(String day);
 
     @Query("DELETE FROM task")
     void deleteAll();

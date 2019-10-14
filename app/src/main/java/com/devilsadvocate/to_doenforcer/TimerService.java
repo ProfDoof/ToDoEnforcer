@@ -39,7 +39,7 @@ public class TimerService extends Service {
         lockIntent = new Intent(this, MainActivity.class);
         lockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mTimer = new Timer();
-        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 5, NOTIFY_INTERVAL);
+        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 2, NOTIFY_INTERVAL);
     }
 
     @Override

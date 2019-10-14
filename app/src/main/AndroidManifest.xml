@@ -25,10 +25,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <receiver
+            android:name=".UpdateTasksReceiver"
+            android:enabled="true"
+            android:exported="false"></receiver>
+
         <service
             android:name=".TimerService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".NewTaskActivity" />
         <activity android:name=".MainActivity">
